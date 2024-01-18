@@ -1,0 +1,176 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <Platforms>AnyCPU;x86</Platforms>
+    <PackageIcon>LvPlayerLogo.png</PackageIcon>
+    <ApplicationIcon>Resource\LvPlayer.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resource\iconfont.ttf" />
+    <None Remove="Resource\Image\Album\1.jpg" />
+    <None Remove="Resource\Image\Album\10.jpg" />
+    <None Remove="Resource\Image\Album\2.jpg" />
+    <None Remove="Resource\Image\Album\3.jpg" />
+    <None Remove="Resource\Image\Album\4.jpg" />
+    <None Remove="Resource\Image\Album\5.jpg" />
+    <None Remove="Resource\Image\Album\6.jpg" />
+    <None Remove="Resource\Image\Album\7.jpg" />
+    <None Remove="Resource\Image\Album\8.jpg" />
+    <None Remove="Resource\Image\Album\9.jpg" />
+    <None Remove="Resource\Image\Avatar\avatar1.png" />
+    <None Remove="Resource\Image\Avatar\avatar2.png" />
+    <None Remove="Resource\Image\Avatar\avatar3.png" />
+    <None Remove="Resource\Image\Avatar\avatar4.png" />
+    <None Remove="Resource\Image\Avatar\avatar5.png" />
+    <None Remove="Resource\Image\Avatar\avatar6.png" />
+    <None Remove="Resource\Image\DevOps\about.png" />
+    <None Remove="Resource\Image\DevOps\aes.png" />
+    <None Remove="Resource\Image\DevOps\DevOps-Boards.png" />
+    <None Remove="Resource\Image\DevOps\DevOps-Overview.png" />
+    <None Remove="Resource\Image\DevOps\DevOps-Pipelines.png" />
+    <None Remove="Resource\Image\DevOps\DevOps-Repos.png" />
+    <None Remove="Resource\Image\DevOps\DevOps-TestPlans.png" />
+    <None Remove="Resource\Image\DevOps\player.png" />
+    <None Remove="Resource\Image\DevOps\set.png" />
+    <None Remove="Resource\Image\LeftMainContent\task.png" />
+    <None Remove="Resource\Image\LeftMainContent\video.png" />
+    <None Remove="Resource\Image\LvPlayer.png" />
+    <None Remove="Resource\Image\videoLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\iconfont.ttf" />
+    <Resource Include="Resource\Image\DevOps\about.png" />
+    <Resource Include="Resource\Image\DevOps\aes.png" />
+    <Resource Include="Resource\Image\DevOps\DevOps-Boards.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\DevOps\DevOps-Overview.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\DevOps\DevOps-Pipelines.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\DevOps\DevOps-Repos.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\DevOps\DevOps-TestPlans.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\DevOps\player.png" />
+    <Resource Include="Resource\Image\DevOps\set.png" />
+    <Resource Include="Resource\LvPlayer.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HandyControl" Version="3.4.0" />
+    <PackageReference Include="HandyControls" Version="3.4.4" />
+    <PackageReference Include="Masuit.Tools.Abstractions" Version="2.5.8.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Mpv.NET" Version="1.2.0" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
+    <PackageReference Include="ToastNotifications" Version="2.5.1" />
+    <PackageReference Include="ToastNotifications.Messages" Version="2.5.1" />
+    <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
+    <PackageReference Include="Xabe.FFmpeg" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\Image\Album\1.jpg" />
+    <Resource Include="Resource\Image\Album\10.jpg" />
+    <Resource Include="Resource\Image\Album\2.jpg" />
+    <Resource Include="Resource\Image\Album\3.jpg" />
+    <Resource Include="Resource\Image\Album\4.jpg" />
+    <Resource Include="Resource\Image\Album\5.jpg" />
+    <Resource Include="Resource\Image\Album\6.jpg" />
+    <Resource Include="Resource\Image\Album\7.jpg" />
+    <Resource Include="Resource\Image\Album\8.jpg" />
+    <Resource Include="Resource\Image\Album\9.jpg" />
+    <Resource Include="Resource\Image\Avatar\avatar1.png" />
+    <Resource Include="Resource\Image\Avatar\avatar2.png" />
+    <Resource Include="Resource\Image\Avatar\avatar3.png" />
+    <Resource Include="Resource\Image\Avatar\avatar4.png" />
+    <Resource Include="Resource\Image\Avatar\avatar5.png" />
+    <Resource Include="Resource\Image\Avatar\avatar6.png" />
+    <Resource Include="Resource\Image\LeftMainContent\task.png" />
+    <Resource Include="Resource\Image\LeftMainContent\video.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\LvPlayer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\videoLogo.png" />
+    <Resource Include="Resource\LvPlayerLogo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="lib\ffmpeg.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\ffprobe.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\mpv-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resource\LvPlayerLogo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resource\Lang\Lang.en-US.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Resource\Lang\Lang.zh-CN.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+</Project>

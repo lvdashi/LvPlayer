@@ -1,0 +1,101 @@
+﻿<hc:GlowWindow x:Class="LvPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LvPlayer"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1080" 
+        WindowStyle="None"  MinHeight="506" MinWidth="830">
+
+
+    <Window.Resources>
+        <Style x:Key="BorderRegion" TargetType="{x:Type Border}">
+            <Setter Property="Border.CornerRadius" Value="0" />
+            <Setter Property="BorderThickness" Value="1" />
+            
+           
+        </Style>
+
+        <Style x:Key="OpButtin" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonIcon}">
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="Margin" Value="0,0,5,0"></Setter>
+            <Setter Property="Foreground" Value="{DynamicResource TextIconBrush}"></Setter>
+            <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"></Setter>
+        </Style>
+        
+        <Style x:Key="ListBoxTransparent" BasedOn="{StaticResource ListBoxBaseStyle}" TargetType="ListBox">
+            <Setter Property="Background" Value="#2A2A2B"/>
+            <Setter Property="ItemContainerStyle" Value="{StaticResource ListBoxItemTransparent}"/>
+        </Style>
+    </Window.Resources>
+
+    <hc:TransitioningContentControl>
+        <Border Style="{StaticResource BorderRegion}" Background="{DynamicResource MainDefaultBrush}" BorderBrush="{DynamicResource MainDefaultBorderBrush}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--标题栏-->
+                <Grid x:Name="titleBar" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="{DynamicResource MainTitleBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <!--Logo-->
+                    <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Image Width="110" Source="pack://application:,,,/Resource/Image/LvPlayer.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+
+                    <!--操作按钮-->
+                    <StackPanel Margin="0" Grid.Row="0" Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button hc:TipElement.Visibility="Visible" hc:TipElement.Placement="BottomRight" ToolTip="最小化" x:Name="smallButton" Command="{Binding Path=ButtonCommand}" CommandParameter="{Binding ElementName=smallButton,Path=ToolTip}"
+                                Style="{StaticResource OpButtin}" Focusable="False" hc:IconElement.Geometry="{StaticResource WindowMinGeometry}" hc:BorderElement.CornerRadius="20" />
+                        <Button hc:TipElement.Visibility="Visible" hc:TipElement.Placement="BottomRight" ToolTip="恢复默认" x:Name="middleButton" Command="{Binding Path=ButtonCommand}" CommandParameter="{Binding ElementName=middleButton,Path=ToolTip}"
+                                Style="{StaticResource OpButtin}" Focusable="False" hc:IconElement.Geometry="{StaticResource WindowRestoreGeometry}" hc:BorderElement.CornerRadius="20" />
+                        <Button hc:TipElement.Visibility="Visible" hc:TipElement.Placement="BottomRight" ToolTip="最大化" x:Name="bigButton" Command="{Binding Path=ButtonCommand}" CommandParameter="{Binding ElementName=bigButton,Path=ToolTip}"
+                                Style="{StaticResource OpButtin}" Focusable="False" hc:IconElement.Geometry="{StaticResource WindowMaxGeometry}" hc:BorderElement.CornerRadius="20" />
+                        <Button hc:TipElement.Visibility="Visible" hc:TipElement.Placement="BottomRight" ToolTip="退出程序" x:Name="closeButton" Command="{Binding Path=ButtonCommand}" CommandParameter="{Binding ElementName=closeButton,Path=ToolTip}"
+                                Style="{StaticResource OpButtin}" Focusable="False" hc:IconElement.Geometry="{StaticResource CloseGeometry}" hc:BorderElement.CornerRadius="20" />
+                    </StackPanel>
+                </Grid>
+               
+                
+                <!--左侧菜单-->
+                <Grid x:Name="MenuContent"  Grid.Column="0" Grid.Row="1" >
+                    
+                </Grid>
+               
+               
+                <!--右边内容-->
+                <Grid x:Name="mainContent" Grid.Column="1" Grid.Row="1"  Background="{DynamicResource DefaultContentBrush}" Margin="5">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewbox Margin="5" Width="256" Height="256">
+                            <hc:AnimationPath VerticalAlignment="Center" Duration="0:0:5" Stretch="Uniform" Width="64" Height="64" StrokeThickness="2" 
+                              Stroke="{DynamicResource PrimaryBrush}" Data="{StaticResource LvVideoGeometry}"/>
+                        </Viewbox>
+                        <TextBlock Margin="3,20,3,3" HorizontalAlignment="Center" Text="LvPlayer 开源加密视频播放器" Style="{StaticResource TextBlockLargeBold}" Foreground="{DynamicResource DefaultContentForceBrush}"/>
+                    </StackPanel>
+
+                </Grid>
+               
+            </Grid>
+           
+        </Border>
+
+    </hc:TransitioningContentControl>
+   
+
+
+</hc:GlowWindow>

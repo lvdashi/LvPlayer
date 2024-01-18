@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="LvPlayer.UserControl.MenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LvPlayer.UserControl"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:command="http://www.galasoft.ch/mvvmlight"
+             xmlns:viewmodel="clr-namespace:LvPlayer.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="200">
+
+    <UserControl.DataContext>
+        <viewmodel:SideMenuViewModel/>
+    </UserControl.DataContext>
+    <hc:SideMenu BorderThickness="1" Width="200" Margin="10"  >
+        <hc:SideMenu.Resources>
+            <Color x:Key="PrimaryColor">#FFFFFFFF</Color>
+            <Color x:Key="DarkPrimaryColor">#FFFFFFFF</Color>
+            <LinearGradientBrush x:Key="PrimaryBrush" EndPoint="1,0" StartPoint="0,0">
+                <GradientStop Color="{DynamicResource PrimaryColor}" Offset="0"/>
+                <GradientStop Color="{DynamicResource DarkPrimaryColor}" Offset="1"/>
+            </LinearGradientBrush>
+        </hc:SideMenu.Resources>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="SelectionChanged">
+                <command:EventToCommand Command="{Binding SwitchItemCmd}" PassEventArgsToCommand="True" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <hc:SideMenuItem Header="视频加密">
+            <hc:SideMenuItem.Icon>
+                <Image Source="pack://application:,,,/Resource/Image/DevOps/player.png" Width="24" Height="24"/>
+            </hc:SideMenuItem.Icon>
+            <hc:SideMenuItem Header="加密任务">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock Text="&#xe88f;" FontFamily="{StaticResource IconFont}" Style="{StaticResource TextBlockSubTitle}"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+        </hc:SideMenuItem>
+        <hc:SideMenuItem Header="视频播放">
+            <hc:SideMenuItem.Icon>
+                <Image Source="pack://application:,,,/Resource/Image/DevOps/aes.png" Width="24" Height="24"/>
+            </hc:SideMenuItem.Icon>
+            <hc:SideMenuItem Header="播放本地视频" Command="{Binding SelectCmd}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock Text="&#xe612;" FontFamily="{StaticResource IconFont}" Style="{StaticResource TextBlockSubTitle}"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+
+          
+          
+        </hc:SideMenuItem>
+        <hc:SideMenuItem Header="软件设置">
+            <hc:SideMenuItem.Icon>
+                <Image Source="pack://application:,,,/Resource/Image/DevOps/set.png" Width="24" Height="24"/>
+            </hc:SideMenuItem.Icon>
+            <hc:SideMenuItem Header="基础设置" Command="{Binding SelectCmd}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock Text="&#xe841;" FontFamily="{StaticResource IconFont}" Style="{StaticResource TextBlockSubTitle}"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+        </hc:SideMenuItem>
+        <hc:SideMenuItem Header="关于">
+            <hc:SideMenuItem.Icon>
+                <Image Source="pack://application:,,,/Resource/Image/DevOps/about.png" Width="24" Height="24"/>
+            </hc:SideMenuItem.Icon>
+            <hc:SideMenuItem Header="软件信息" Command="{Binding SelectCmd}" CommandParameter="{Binding Header,RelativeSource={RelativeSource Self}}">
+                <hc:SideMenuItem.Icon>
+                    <TextBlock Text="&#xe6f9;" FontFamily="{StaticResource IconFont}" Style="{StaticResource TextBlockSubTitle}"/>
+                </hc:SideMenuItem.Icon>
+            </hc:SideMenuItem>
+        </hc:SideMenuItem>
+
+    </hc:SideMenu>
+</UserControl>

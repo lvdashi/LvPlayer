@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LvPlayer", "LvPlayer.csproj", "{6A06276A-4BDA-40DC-AAF9-3105D44520C6}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{3AE22CD7-8E04-4D0B-AD9E-1DA591F90C6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Debug|x86.ActiveCfg = Debug|x86
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Debug|x86.Build.0 = Debug|x86
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Release|x86.ActiveCfg = Release|x86
+		{6A06276A-4BDA-40DC-AAF9-3105D44520C6}.Release|x86.Build.0 = Release|x86
+		{3AE22CD7-8E04-4D0B-AD9E-1DA591F90C6D}.Debug|Any CPU.ActiveCfg = Debug
+		{3AE22CD7-8E04-4D0B-AD9E-1DA591F90C6D}.Debug|x86.ActiveCfg = Debug
+		{3AE22CD7-8E04-4D0B-AD9E-1DA591F90C6D}.Release|Any CPU.ActiveCfg = Release
+		{3AE22CD7-8E04-4D0B-AD9E-1DA591F90C6D}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEC42B50-6D8A-40D7-92CF-02498897FD77}
+	EndGlobalSection
+EndGlobal
